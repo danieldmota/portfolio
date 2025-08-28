@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/projeto-card.css">
-    <!-- fav-icon -->
-    <link rel="shortcut icon" href="images/fav-icon.png">
-    <!-- font-poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap"
-        rel="stylesheet">
-    <!-- font-awesome para icones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
+<div class="popup-fundo" id="container-projeto-1">
     <div class="container-projeto">
+        <div class="btn-fechar-popup" onclick="fechar_popup('container-projeto-1')">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
         <!-- video -->
         <div class="projeto-video">
             <video controls>
@@ -48,7 +28,7 @@
                 </ul>
                 <p>Para ver o código-fonte, visite o repositório no GitHub:</p>
                 <div class="profile-social-container">
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
             <div class="projeto-footer">
@@ -56,6 +36,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>

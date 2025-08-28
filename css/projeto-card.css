@@ -1,15 +1,4 @@
-:root {
-    --main-color: #5F85DB;
-    --secondary-color: #78CC6D;
-    --text-color: #F6F4F0;
-    --bg-color: #222222;
-    --body-bg-color: #2d2d33;
-    --border-color: #303030;
-    --gradient-start: rgb(26, 26, 26);
-    --gradient-end: #0c0c0c;
-    --bg-gradient-start: #2d2f31;
-    --bg-gradient-end: #272a2e;
-}
+@import url(cores.css);
 
 .container-projeto {
     display: flex;
@@ -22,6 +11,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
+    position: relative;
 }
 
 .projeto-video video {
