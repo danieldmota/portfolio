@@ -1,0 +1,57 @@
+:root {
+    --main-color: #5F85DB;
+    --secondary-color: #78CC6D;
+    --text-color: #F6F4F0;
+    --bg-color: #222222;
+    --body-bg-color: #2d2d33;
+    --border-color: #303030;
+    --gradient-start: rgb(26, 26, 26);
+    --gradient-end: #0c0c0c;
+    --bg-gradient-start: #2d2f31;
+    --bg-gradient-end: #272a2e;
+}
+
+.container-projeto {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    align-items: center;
+    background-color: #bdbdbd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+.projeto-video video {
+    width: 500px;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.profile-social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.profile-social-container a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    color: var(--text-color);
+    transition: all ease 0.3s;
+}
+
+.profile-social-container a:hover,
+.user-profile-btns a:hover {
+    color: var(--main-color);
+}
