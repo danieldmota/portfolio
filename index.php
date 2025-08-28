@@ -251,7 +251,7 @@
 
                 <!-- container -->
                 <div class="project-container">
-                    <button class="project-box" data-category="ReactJs" data-aos="fade-up">
+                    <button onclick="" class="project-box" data-category="ReactJs" data-aos="fade-up">
                         <!-- Imagem -->
                         <div class="project-box-img">
                             <img src="images/p2.jpg" alt="projeto" />
