@@ -94,7 +94,7 @@
             <section id="about-me" class="section-container">
                 <h3>Olá, Sou <span id="role">Daniel</span></h3>
                 <h1>Desenvolvedor <span>Junior</span></h1>
-                <p>Tenho 18 anos, sou apaixonado em tudo que envolva tecnologia e inovação. Estudo desenvolvimento web
+                <p>Tenho 18 anos, sou apaixonado em tudo que envolva tecnologia. Estudo desenvolvimento web
                     desde os 16 anos de idade e atualmente estou focado em me tornar um desenvolvedor Full Stack de alto
                     nível. Adoro desafios e estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades.
                     Sou dedicado e comprometido com meus projetos,
@@ -247,23 +247,23 @@
                 <ul class="project-list">
                     <li class="active" data-filter="all">All</li>
                     <li data-filter="ReactJs">ReactJs</li>
-                    <li data-filter="Figma">Figma</li>
+                    <li data-filter="HTML/CSS">HTML/CSS</li>
                     <li data-filter="Php">PHP</li>
                 </ul>
 
                 <!-- container -->
                 <div class="project-container">
-                    <button onclick="abrir_popup('container-projeto-1')" class="project-box" data-category="ReactJs" data-aos="fade-up">
+                    <button onclick="abrir_popup('container-projeto-1')" class="project-box" data-category="HTML/CSS" data-aos="fade-up">
                         <!-- Imagem -->
                         <div class="project-box-img">
-                            <img src="images/p2.jpg" alt="projeto" />
+                            <img src="images/mockup-notebook-alfatech.png" alt="projeto" />
                         </div>
                         <!-- Texto -->
                         <div class="project-box-text-container">
                             <!-- Detalhes -->
                             <div class="project-box-text">
-                                <strong>Business Company Website</strong>
-                                <span>ReactJs</span>
+                                <strong>AlfaTech</strong>
+                                <span>Html/Css</span>
                             </div>
                             <!-- icone com link -->
                             <div class="project-box-btn">
@@ -291,7 +291,7 @@
                         </div>
                     </button>
 
-                    <button class="project-box" data-category="ReactJs" data-aos="fade-up">
+                    <button class="project-box" data-category="ReactJs">
                         <!-- Imagem -->
                         <div class="project-box-img">
                             <img src="images/p1.jpg" alt="projeto" />
@@ -343,37 +343,43 @@
                                 <span class="edu-work-year">2024 - 2026</span>
                                 <strong>Técnico em desenvolvimento de sistemas</strong>
                                 <span class="edu-work-location">Senac Hub Academy</span>
-                                <p>No Senac, desenvolvi um sistema web completo no Projeto Integrador, passando por
-                                    todas as etapas:
-                                    documentação, protótipo no Figma, front-end e back-end com PHP em MVC sem framework.
-                                    Também tive
-                                    experiência com Symfony em um projeto mobile integrado ao Flutter. Essa vivência me
-                                    deu uma base sólida em
-                                    desenvolvimento web e boas práticas de projeto.</p>
+                                <p>No Senac, participei do desenvolvimento de um sistema web completo no Projeto Integrador, atuando em equipe e aplicando a metodologia ágil SCRUM em todas as etapas do processo. Durante o projeto, realizamos a documentação completa (levantamento de requisitos e criação de diversos diagramas), prototipagem no Figma, modelagem de banco de dados em SQL e o desenvolvimento do front-end e back-end em PHP, seguindo o padrão MVC sem o uso de frameworks.
+                                    Além disso, tive aulas práticas de Symfony, nas quais desenvolvi um projeto mobile integrado ao Flutter, aprofundando meus conhecimentos sobre integração entre sistemas e arquitetura de software.
+                                    Essa experiência me proporcionou uma base sólida em desenvolvimento web, domínio de boas práticas de projeto e habilidades de colaboração em equipe, preparando-me para atuar de forma eficiente em ambientes reais de desenvolvimento.</p>
                             </div>
                             <!-- box -->
                             <div class="edu-work-box">
                                 <span class="edu-work-year">2025 - 2028</span>
                                 <strong>Engenharia de Software</strong>
                                 <span class="edu-work-location">Unigran Capital</span>
-                                <p>Estou adquirindo fundamentos essenciais em lógica de programação, estruturas de
-                                    dados, algoritmos e banco de dados,
-                                    além de aprender a planejar e implementar soluções de software. Também começo a
-                                    conhecer testes, arquitetura e
-                                    metodologias ágeis, construindo uma base para o desenvolvimento de projetos.</p>
+                                <p>Durante o curso de Engenharia de Software, meu objetivo é desenvolver a capacidade de planejar, projetar, implementar e manter sistemas de software com qualidade, eficiência e segurança. Busco compreender todo o ciclo de vida de um software — desde a análise de requisitos até a manutenção — aplicando metodologias e boas práticas que garantam confiabilidade, escalabilidade e facilidade de manutenção nos projetos.
+                                    A formação tem como foco preparar profissionais para criar soluções tecnológicas que atendam às necessidades reais dos usuários e das empresas, unindo fundamentos teóricos com aplicação prática no desenvolvimento de sistemas modernos.</p>
                             </div>
                         </div>
                     </div>
                     <!-- Work -->
-                    <!-- <div class="work-container">
+                    <div class="work-container">
                         <span class="edu-work-label">
                             <i class="fa-solid fa-briefcase"></i>
                             Experiência
-                        </span> -->
-                    <!-- box-container -->
-                    <!-- <div class="edu-work-box-container"> -->
-                    <!-- box -->
-                    <!-- <div class="edu-work-box" data-aos="fade-up">
+                        </span>
+
+                        <div class="edu-work-box-container">
+                            <!-- box -->
+                            <div class="edu-work-box" data-aos="fade-up">
+                                <span class="edu-work-year">2025 - 2026</span>
+                                <strong>Estágio Dev full stack</strong>
+                                <span class="edu-work-location">Projeto incubado - Prefeitura de Aquidauna</span>
+                                <p>Fiquei em uma equipe composta por mim, mais três desenvolvedores e um docente de apoio, onde
+                                    desenvolvemos um sistema completo de turismo para a Prefeitura de Aquidauana. O projeto foi
+                                    construído seguindo boas práticas de desenvolvimento de software, passando por todas as
+                                    etapas: levantamento de requisitos, criação de diagramas, prototipagem de interfaces,
+                                    aplicação da metodologia ágil SCRUM, modelagem do banco de dados e desenvolvimento com
+                                    React e Node.js, utilizando frameworks modernos para garantir qualidade, desempenho e
+                                    escalabilidade.</p>
+                            </div>
+                            <!-- box -->
+                            <!-- <div class="edu-work-box" data-aos="fade-up">
                                 <span class="edu-work-year">2018 - 2022</span>
                                 <strong>BS ins Software Engenrr</strong>
                                 <span class="edu-work-location">Carson, USA</span>
@@ -381,8 +387,8 @@
                                     accusantium? Asperiores quo, culpa pariatur consectetur neque maxime dolorem fugiat
                                     error excepturi quas? Eaque dolor inventore numquam obcaecati!</p>
                             </div> -->
-                    <!-- box -->
-                    <!-- <div class="edu-work-box" data-aos="fade-up">
+                            <!-- box -->
+                            <!-- <div class="edu-work-box" data-aos="fade-up">
                                 <span class="edu-work-year">2018 - 2022</span>
                                 <strong>BS ins Software Engenrr</strong>
                                 <span class="edu-work-location">Carson, USA</span>
@@ -390,17 +396,8 @@
                                     accusantium? Asperiores quo, culpa pariatur consectetur neque maxime dolorem fugiat
                                     error excepturi quas? Eaque dolor inventore numquam obcaecati!</p>
                             </div> -->
-                    <!-- box -->
-                    <!-- <div class="edu-work-box" data-aos="fade-up">
-                                <span class="edu-work-year">2018 - 2022</span>
-                                <strong>BS ins Software Engenrr</strong>
-                                <span class="edu-work-location">Carson, USA</span>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi facere adipisci ipsa
-                                    accusantium? Asperiores quo, culpa pariatur consectetur neque maxime dolorem fugiat
-                                    error excepturi quas? Eaque dolor inventore numquam obcaecati!</p>
-                            </div> -->
-                    <!-- </div> -->
-                    <!-- </div> -->
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -420,5 +417,5 @@
 </html>
 
 <?php
-require_once 'projeto-1.php';
+require_once 'projeto-alfatech.php';
 ?>
