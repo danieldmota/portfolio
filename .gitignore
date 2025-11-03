@@ -1,3 +1,4 @@
-videos
-images
-cv
+videos/video-alfatech.mp4
+images/*.png
+images/*.jpg
+cv/cv-daniel.pdf
