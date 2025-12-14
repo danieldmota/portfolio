@@ -10,7 +10,7 @@
                 <p>Este projeto foi desenvolvido utilizando as tecnologias HTML e CSS.</p>
             </div>
             <video controls>
-                <source src="videos/video-alfatech.mp4" type="video/mp4">
+                <source src="video/alfatech.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>

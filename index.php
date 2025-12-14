@@ -272,7 +272,7 @@
                         </div>
                     </button>
 
-                    <button class="project-box" data-category="Figma" data-aos="fade-up">
+                    <button onclick="abrir_popup('container-projeto-2')" class="project-box" data-category="Figma" data-aos="fade-up">
                         <!-- Imagem -->
                         <div class="project-box-img">
                             <img src="images/p3.jpg" alt="projeto" />
@@ -417,5 +417,6 @@
 </html>
 
 <?php
-require_once 'projeto-alfatech.php';
+require_once './projetos/projeto-alfatech.php';
+require_once './projetos/projeto.php';
 ?>
