@@ -1,6 +1,6 @@
 // Efeito de transição de palavras
 document.addEventListener("DOMContentLoaded", () => {
-    const roles = ["Daniel", "Desenvolvedor Web", "Estudante de Engenharia de Software"];
+    const roles = ["Daniel", "Desenvolvedor Web", "Estudante de Eng. de Software"];
     const roleElement = document.getElementById("role");
     let roleIndex = 0;
     let letterIndex = 0;

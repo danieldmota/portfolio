@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="projeto-footer">
-                <p>&copy; 2025 Daniel. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Daniel. Todos os direitos reservados.</p>
             </div>
         </div>
     </div>

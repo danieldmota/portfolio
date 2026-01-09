@@ -103,16 +103,20 @@
                     Estou sempre buscando evoluir e contribuir com trabalhos que façam a diferença.</p>
                 <div class="project-container-about">
                     <!-- box -->
-                    <div class="project-container-box">
-                        <span>10</span>
-                        <strong>Projetos feitos</strong>
-                    </div>
+                    <!-- <div class="project-container-box">
+                        <span>3</span>
+                        <strong>Projetos reais desenvolvidos</strong>
+                    </div> -->
                     <!-- box -->
-                    <div class="project-container-box">
+                    <!-- <div class="project-container-box">
                         <span>2</span>
                         <strong>Anos de estudo e prática</strong>
-                    </div>
+                    </div> -->
                     <!-- box -->
+                     <!-- <div class="project-container-box">
+                        <span>3</span>
+                        <strong>Meses de experiência profissional</strong>
+                    </div> -->
                 </div>
             </section>
 
@@ -127,100 +131,67 @@
                     <!-- html -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
                         <div class="skill-box-content">
-                            <i class="fa-brands fa-html5"></i>
-                            <span>HTML</span>
+                            <i class="fa-brands fa-js"></i>
+                            <span>JavaScript/React/Next.js/Nest.js</span>
                         </div>
-                        <div class="skill-box-bar">
+                        <!-- <div class="skill-box-bar">
                             <span style="width: 90%;"></span>
                         </div>
-                        <span class="skill-box-percentage">90%</span>
+                        <span class="skill-box-percentage">90%</span> -->
                     </div>
-                    <!-- css -->
+                    <!-- Node -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
                         <div class="skill-box-content">
-                            <i class="fa-brands fa-css3"></i>
-                            <span>CSS</span>
+                            <i class="fa-brands fa-node-js"></i>
+                            <span>Node</span>
                         </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 80%;"></span>
+                        <!-- <div class="skill-box-bar">
+                            <span style="width: 40%;"></span>
                         </div>
-                        <span class="skill-box-percentage">80%</span>
+                        <span class="skill-box-percentage">40%</span> -->
                     </div>
-                    <!-- PHP -->
+                    <!-- css -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
                         <div class="skill-box-content">
                             <i class="fa-brands fa-php"></i>
                             <span>PHP</span>
                         </div>
-                        <div class="skill-box-bar">
+                        <!-- <div class="skill-box-bar">
                             <span style="width: 80%;"></span>
                         </div>
-                        <span class="skill-box-percentage">80%</span>
+                        <span class="skill-box-percentage">80%</span> -->
                     </div>
-                    <!-- Symfony -->
-                    <div class="skill-box bg-gradient" data-aos="fade-up">
-                        <div class="skill-box-content">
-                            <i class="fa-brands fa-symfony"></i>
-                            <span>Symfony</span>
-                        </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 70%;"></span>
-                        </div>
-                        <span class="skill-box-percentage">70%</span>
-                    </div>
-                    <!-- SQL -->
-                    <div class="skill-box bg-gradient" data-aos="fade-up">
-                        <div class="skill-box-content">
-                            <i class="fa-solid fa-database"></i> <span>Banco de dados</span>
-                        </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 70%;"></span>
-                        </div>
-                        <span class="skill-box-percentage">70%</span>
-                    </div>
-                    <!-- python -->
+                    <!-- JavaScript -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
                         <div class="skill-box-content">
                             <i class="fa-brands fa-python"></i>
                             <span>Python</span>
                         </div>
-                        <div class="skill-box-bar">
+                        <!-- <div class="skill-box-bar">
+                            <span style="width: 60%;"></span>
+                        </div>
+                        <span class="skill-box-percentage">60%</span> -->
+                    </div>
+                    <!-- SQL -->
+                    <div class="skill-box bg-gradient" data-aos="fade-up">
+                        <div class="skill-box-content">
+                            <i class="fa-solid fa-database"></i> <span>MySQL/Postgre</span>
+                        </div>
+                        <!-- <div class="skill-box-bar">
                             <span style="width: 70%;"></span>
                         </div>
-                        <span class="skill-box-percentage">70%</span>
+                        <span class="skill-box-percentage">70%</span> -->
                     </div>
-                    <!-- JavaScript -->
+                    <!-- python -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
                         <div class="skill-box-content">
-                            <i class="fa-brands fa-js"></i>
-                            <span>JavaScript</span>
+                            <i class="fa-solid fa-database"></i>
+                            <span>Prisma ORM/Drizzle ORM</span>
                         </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 60%;"></span>
+                        <!-- <div class="skill-box-bar">
+                            <span style="width: 70%;"></span>
                         </div>
-                        <span class="skill-box-percentage">60%</span>
-                    </div>
-                    <!-- React -->
-                    <div class="skill-box bg-gradient" data-aos="fade-up">
-                        <div class="skill-box-content">
-                            <i class="fa-brands fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 60%;"></span>
-                        </div>
-                        <span class="skill-box-percentage">60%</span>
-                    </div>
-                    <!-- Node -->
-                    <div class="skill-box bg-gradient" data-aos="fade-up">
-                        <div class="skill-box-content">
-                            <i class="fa-brands fa-node"></i>
-                            <span>Node</span>
-                        </div>
-                        <div class="skill-box-bar">
-                            <span style="width: 40%;"></span>
-                        </div>
-                        <span class="skill-box-percentage">40%</span>
+                        <span class="skill-box-percentage">70%</span> -->
                     </div>
                     <!-- Flutter -->
                     <div class="skill-box bg-gradient" data-aos="fade-up">
@@ -228,10 +199,10 @@
                             <i class="fa-brands fa-flutter"></i>
                             <span>Flutter</span>
                         </div>
-                        <div class="skill-box-bar">
+                        <!-- <div class="skill-box-bar">
                             <span style="width: 40%;"></span>
                         </div>
-                        <span class="skill-box-percentage">40%</span>
+                        <span class="skill-box-percentage">40%</span> -->
                     </div>
                 </div>
             </section>
@@ -253,6 +224,25 @@
 
                 <!-- container -->
                 <div class="project-container">
+                    <button onclick="abrir_popup('container-projeto-2')" class="project-box" data-category="HTML/CSS" data-aos="fade-up">
+                        <!-- Imagem -->
+                        <div class="project-box-img">
+                            <img src="images/mockup-site-psicologia.png" alt="projeto" />
+                        </div>
+                        <!-- Texto -->
+                        <div class="project-box-text-container">
+                            <!-- Detalhes -->
+                            <div class="project-box-text">
+                                <strong>Psicóloga Jucilene</strong>
+                                <span>Html/Css/JS</span>
+                            </div>
+                            <!-- icone com link -->
+                            <div class="project-box-btn">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                    </button>
+
                     <button onclick="abrir_popup('container-projeto-1')" class="project-box" data-category="HTML/CSS" data-aos="fade-up">
                         <!-- Imagem -->
                         <div class="project-box-img">
@@ -264,25 +254,6 @@
                             <div class="project-box-text">
                                 <strong>AlfaTech</strong>
                                 <span>Html/Css</span>
-                            </div>
-                            <!-- icone com link -->
-                            <div class="project-box-btn">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </div>
-                        </div>
-                    </button>
-
-                    <button onclick="abrir_popup('container-projeto-2')" class="project-box" data-category="Figma" data-aos="fade-up">
-                        <!-- Imagem -->
-                        <div class="project-box-img">
-                            <img src="images/p3.jpg" alt="projeto" />
-                        </div>
-                        <!-- Texto -->
-                        <div class="project-box-text-container">
-                            <!-- Detalhes -->
-                            <div class="project-box-text">
-                                <strong>Figma App Design</strong>
-                                <span>Figma</span>
                             </div>
                             <!-- icone com link -->
                             <div class="project-box-btn">
@@ -418,5 +389,5 @@
 
 <?php
 require_once './projetos/projeto-alfatech.php';
-require_once './projetos/projeto.php';
+require_once './projetos/projeto-psicologia.php';
 ?>
