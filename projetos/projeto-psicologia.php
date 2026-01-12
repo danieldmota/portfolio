@@ -10,7 +10,7 @@
                 <p>Este projeto foi desenvolvido utilizando as tecnologias HTML, CSS e JavaScript.</p>
             </div>
             <video controls>
-                <source src="video/alfatech.mp4" type="video/mp4">
+                <source src="video/psicologa-ju.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>
@@ -26,9 +26,14 @@
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
-                <p>Para ver o código-fonte, visite o repositório no GitHub:</p>
-                <div class="profile-social-container">
-                    <a href="https://github.com/danieldmota/site-hospedagem"><i class="fa-brands fa-github"></i></a>
+                <p>Para acessar este site clique no icone de Wi-fi:</p>
+                <div class="profiles-social">
+                    <div class="profile-social-container">
+                        <a href="https://danieldmota.github.io/site-psicologa-ju/" target="_blank"><i class="fa-solid fa-wifi"></i></a>
+                    </div>
+                    <div class="profile-social-container">
+                        <a href="https://github.com/danieldmota/site-psicologa-ju"><i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="projeto-footer">

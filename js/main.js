@@ -1,6 +1,6 @@
 // Efeito de transição de palavras
 document.addEventListener("DOMContentLoaded", () => {
-    const roles = ["Daniel", "Desenvolvedor Web", "Estudante de Eng. de Software"];
+    const roles = ["Daniel", "Estudante de Eng. de Software"];
     const roleElement = document.getElementById("role");
     let roleIndex = 0;
     let letterIndex = 0;
@@ -127,3 +127,48 @@ function fechar_popup(popupId) {
     const fundoPopup = document.getElementById(popupId);
     fundoPopup.classList.remove('ativo');
 }
+
+// Ler mais / Ler menos para boxes de formação/experiência
+document.addEventListener('DOMContentLoaded', () => {
+    const COLLAPSED_HEIGHT = 160; // deve seguir o valor do CSS
+
+    document.querySelectorAll('.edu-work-box').forEach(box => {
+        // medir altura do conteúdo real
+        const fullHeight = box.scrollHeight;
+
+        if (fullHeight > COLLAPSED_HEIGHT + 10) {
+            // adicionar estado inicial colapsado
+            box.classList.remove('expanded');
+
+            // adicionar overlay de fade
+            const overlay = document.createElement('div');
+            overlay.className = 'fade-overlay';
+            box.appendChild(overlay);
+
+            // criar botão ler mais
+            const btn = document.createElement('button');
+            btn.className = 'edu-readmore-btn';
+            btn.type = 'button';
+            btn.textContent = 'Ler mais';
+            btn.setAttribute('aria-expanded', 'false');
+
+            btn.addEventListener('click', () => {
+                const isExpanded = box.classList.toggle('expanded');
+                btn.textContent = isExpanded ? 'Ler menos' : 'Ler mais';
+                btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
+                // suavemente trazer em foco quando recolapsa
+                if (!isExpanded) {
+                    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+
+            const wrap = document.createElement('div');
+            wrap.className = 'edu-work-readmore';
+            wrap.appendChild(btn);
+
+            // inserir o botão logo após o box
+            box.parentNode.insertBefore(wrap, box.nextSibling);
+        }
+    });
+});

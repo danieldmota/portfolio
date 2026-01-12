@@ -220,6 +220,13 @@ header ul li a.active {
   margin: 5px 0;
 }
 
+.profiles-social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-social-container {
   display: flex;
   justify-content: center;
@@ -643,6 +650,57 @@ button.project-box {
   color: var(--text-color);
   font-size: 0.8rem;
   margin-top: 10px;
+}
+
+/* Limitar altura dos boxes de formação/experiência e adicionar transição */
+.edu-work-box {
+  max-height: 160px; /* altura colapsada padrão */
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.2s ease;
+}
+
+.edu-work-box.expanded {
+  max-height: 2000px; /* valor grande para permitir expansão suave */
+}
+
+/* Gradiente de fade na parte inferior para indicar conteúdo oculto */
+.edu-work-box .fade-overlay {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.06) 40%, var(--bg-color) 100%);
+  transition: opacity 0.25s ease;
+}
+
+.edu-work-box.expanded .fade-overlay {
+  opacity: 0;
+}
+
+/* Botão ler mais */
+.edu-work-readmore {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.edu-readmore-btn {
+  border: none;
+  background: transparent;
+  color: var(--main-color);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.edu-readmore-btn:hover {
+  background: rgba(0,0,0,0.04);
+  transform: translateY(-1px);
 }
 
 /* contato */

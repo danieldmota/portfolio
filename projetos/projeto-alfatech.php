@@ -25,9 +25,11 @@
                     <span>HTML</span>
                     <span>CSS</span>
                 </div>
-                <p>Para ver o código-fonte, visite o repositório no GitHub:</p>
-                <div class="profile-social-container">
-                    <a href="https://github.com/danieldmota/site-hospedagem"><i class="fa-brands fa-github"></i></a>
+                <p>Clique para acessar o repositório deste projeto:</p>
+                <div class="profiles-social">
+                    <div class="profile-social-container">
+                        <a href="https://github.com/danieldmota/site-hospedagem"><i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="projeto-footer">
