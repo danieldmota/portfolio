@@ -656,7 +656,8 @@ button.project-box {
 .edu-work-box {
   max-height: 160px; /* altura colapsada padrão */
   overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.2s ease;
+  transition: max-height 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.2s ease;
 }
 
 .edu-work-box.expanded {
@@ -672,7 +673,12 @@ button.project-box {
   bottom: 0;
   height: 56px;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.06) 40%, var(--bg-color) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.06) 40%,
+    var(--bg-color) 100%
+  );
   transition: opacity 0.25s ease;
 }
 
@@ -699,7 +705,7 @@ button.project-box {
 }
 
 .edu-readmore-btn:hover {
-  background: rgba(0,0,0,0.04);
+  background: rgba(0, 0, 0, 0.04);
   transform: translateY(-1px);
 }
 
