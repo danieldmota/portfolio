@@ -321,9 +321,9 @@
                             <div class="edu-work-box" data-aos="fade-up">
                                 <span class="edu-work-year">10/2025 - 08/2026</span>
                                 <strong>Dev full stack</strong>
-                                <span class="edu-work-location">Projeto - Prefeitura de Aquidauna</span>
+                                <span class="edu-work-location">Projeto para Aquidauna - Sistema de Turismo</span>
                                 <p>Estou desenvolvendo em equipe um sistema de turismo voltado para visitantes da cidade de
-                                    Aquidauana, projeto que está em andamento. O diferencial do sistema é um gerador de roteiros
+                                    Aquidauana, projeto que está em andamento à ser entregue no prazo para a prefeitura de Aquidauna. O diferencial do sistema é um gerador de roteiros
                                     inteligentes, pensado para sugerir itinerários personalizados conforme interesses do turista.
                                     O projeto segue os padrões e boas práticas de desenvolvimento de software, passando por etapas
                                     como levantamento de requisitos, modelagem do banco de dados, diagramas de casos de uso e de
