@@ -17,10 +17,6 @@ ul {
   list-style: none;
 }
 
-/* Root das cores */
-
-@import url(cores.css);
-
 body {
   color: var(--text-color);
   background-image: linear-gradient(
@@ -96,7 +92,7 @@ header ul li a {
   color: var(--text-color);
   background-color: var(--bg-color);
   position: relative;
-  transition: all ease 0.2s;
+  transition: color 0.2s ease;
 }
 
 header ul li a::after {
@@ -152,7 +148,7 @@ header nav ul li a:hover::before {
   border: none;
   outline: none;
   cursor: pointer;
-  transition: all ease 0.3s;
+  transition: color 0.3s ease;
 }
 
 .dark-light-btn:hover,
@@ -244,7 +240,7 @@ header ul li a.active {
   align-items: center;
   margin-top: 15px;
   color: var(--text-color);
-  transition: all ease 0.3s;
+  transition: color 0.3s ease;
 }
 
 .profile-social-container a:hover,
@@ -267,7 +263,7 @@ header ul li a.active {
   color: var(--text-color);
   letter-spacing: 0.5px;
   font-weight: 500;
-  transition: all ease 0.3s;
+  transition: color 0.3s ease;
 }
 
 .user-profile-btns a:first-child {
@@ -513,7 +509,7 @@ button.project-box {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: all ease 0.6s;
+  transition: transform 0.6s ease;
 }
 
 .project-box-text-container {
@@ -540,7 +536,7 @@ button.project-box {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 5px 15px;
-  transition: all ease 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-box-btn {
@@ -593,6 +589,12 @@ button.project-box {
   margin-top: 10px;
   padding-left: 10px;
   position: relative;
+}
+
+.edu-work-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .edu-work-box {
@@ -661,7 +663,7 @@ button.project-box {
 }
 
 .edu-work-box.expanded {
-  max-height: 2000px; /* valor grande para permitir expansão suave */
+  max-height: var(--expanded-height, 2000px);
 }
 
 /* Gradiente de fade na parte inferior para indicar conteúdo oculto */
@@ -700,6 +702,8 @@ button.project-box {
   font-weight: 600;
   cursor: pointer;
   padding: 6px 8px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 8px;
   transition: background 0.18s ease, transform 0.12s ease;
 }

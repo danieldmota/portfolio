@@ -1,0 +1,111 @@
+@import "../css/cores.css";
+@import "../css/style.css";
+@import "../css/projeto-card.css";
+@import "../css/popup.css";
+
+html {
+  color-scheme: dark;
+  scrollbar-gutter: stable;
+}
+
+html.light-mode {
+  color-scheme: light;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 3px;
+}
+
+.dark-light-btn .theme-icon-sun {
+  display: inline-block !important;
+}
+
+.dark-light-btn .theme-icon-moon {
+  display: none !important;
+}
+
+.light-mode .dark-light-btn .theme-icon-sun {
+  display: none !important;
+}
+
+.light-mode .dark-light-btn .theme-icon-moon {
+  display: inline-block !important;
+}
+
+#role.is-fading {
+  opacity: 0;
+}
+
+.project-box-img {
+  position: relative;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-container {
+  scroll-margin-top: 20px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.container-projeto .btn-fechar-popup {
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

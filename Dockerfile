@@ -1,9 +1,28 @@
-FROM php:8.2-cli
-
+FROM node:24-alpine AS dependencies
 WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
 
+FROM node:24-alpine AS builder
+WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
+RUN npm run build
 
-EXPOSE 10000
+FROM node:24-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 
-CMD ["php", "-S", "0.0.0.0:10000"]
+RUN addgroup --system --gid 1001 nodejs \
+  && adduser --system --uid 1001 nextjs
+
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+
+USER nextjs
+EXPOSE 3000
+
+CMD ["node", "server.js"]
