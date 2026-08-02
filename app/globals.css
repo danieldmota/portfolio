@@ -1,7 +1,5 @@
 @import "../css/cores.css";
 @import "../css/style.css";
-@import "../css/projeto-card.css";
-@import "../css/popup.css";
 
 html {
   color-scheme: dark;
@@ -44,16 +42,6 @@ a:focus-visible {
   opacity: 0;
 }
 
-.project-box-img {
-  position: relative;
-}
-
-.project-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
 [data-reveal] {
   opacity: 0;
   transform: translateY(100px);
@@ -86,13 +74,6 @@ a:focus-visible {
   transform: translateY(0);
 }
 
-body.modal-open {
-  overflow: hidden;
-}
-
-.container-projeto .btn-fechar-popup {
-  padding: 0;
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,222 +1,179 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import type { KeyboardEvent } from "react";
+import { useRef, useState } from "react";
 
 type Project = {
-  id: "psicologia" | "alfatech";
+  id: string;
   title: string;
-  technologiesLabel: string;
-  technologies: readonly string[];
+  category: string;
   image: string;
-  video: string;
-  summary: string;
   description: string;
-  linksIntro: string;
-  links: readonly { href: string; icon: string; label: string }[];
+  technologies: readonly string[];
+  href?: string;
+  linkLabel?: string;
+  status: string;
 };
 
 const projects: readonly Project[] = [
   {
     id: "psicologia",
     title: "Psicóloga Jucilene",
-    technologiesLabel: "Html/Css/JS",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: "/images/mockup-site-psicologia.png",
-    video: "/video/psicologa-ju.mp4",
-    summary: "Este projeto foi desenvolvido utilizando as tecnologias HTML, CSS e JavaScript.",
+    category: "Website institucional",
+    image: "/images/capa-psicologa.png",
     description:
-      "Página institucional moderna desenvolvida para uma psicóloga. Este projeto foi desenvolvido para que os novos clientes dessa psicóloga possam ter uma melhor experiência quando forem buscar atendimentos psicológicos, para que tenham um direcionamento bem organizado.",
-    linksIntro: "Para acessar este site clique no icone de Wi-fi:",
-    links: [
-      {
-        href: "https://danieldmota.github.io/site-psicologa-ju/",
-        icon: "fa-solid fa-wifi",
-        label: "Acessar o site Psicóloga Jucilene",
-      },
-      {
-        href: "https://github.com/danieldmota/site-psicologa-ju",
-        icon: "fa-brands fa-github",
-        label: "Acessar o repositório Psicóloga Jucilene",
-      },
-    ],
+      "Página institucional moderna criada para tornar a busca por atendimento psicológico mais clara, acolhedora e organizada para novos clientes.",
+    technologies: ["React", "JavaScript"],
+    href: "https://site-psicologa-ju.vercel.app",
+    linkLabel: "Acessar projeto",
+    status: "Publicado",
   },
   {
     id: "alfatech",
     title: "AlfaTech",
-    technologiesLabel: "Html/Css",
-    technologies: ["HTML", "CSS"],
+    category: "Landing page",
     image: "/images/mockup-notebook-alfatech.png",
-    video: "/video/alfatech.mp4",
-    summary: "Este projeto foi desenvolvido utilizando as tecnologias HTML e CSS.",
     description:
-      "Landing page moderna desenvolvida para uma empresa fictícia de hospedagem de sites. Este projeto foi criado no início dos meus estudos em front-end para praticar HTML e CSS puro, com foco em layout profissional.",
-    linksIntro: "Clique para acessar o repositório deste projeto:",
-    links: [
-      {
-        href: "https://github.com/danieldmota/site-hospedagem",
-        icon: "fa-brands fa-github",
-        label: "Acessar o repositório AlfaTech",
-      },
-    ],
+      "Landing page para uma empresa fictícia de hospedagem, desenvolvida durante meus estudos de front-end com foco em composição visual e layout profissional.",
+    technologies: ["HTML", "CSS"],
+    href: "https://github.com/danieldmota/site-hospedagem",
+    linkLabel: "Ver repositório",
+    status: "Código disponível",
   },
 ] as const;
 
-export function ProjectShowcase() {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const activeDialogRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
+function getNextIndex(key: string, currentIndex: number) {
+  if (key === "ArrowRight" || key === "ArrowDown") return (currentIndex + 1) % projects.length;
+  if (key === "ArrowLeft" || key === "ArrowUp") return (currentIndex - 1 + projects.length) % projects.length;
+  if (key === "Home") return 0;
+  if (key === "End") return projects.length - 1;
+  return null;
+}
 
-  function openProject(project: Project, trigger: HTMLButtonElement) {
-    triggerRef.current = trigger;
-    setActiveProject(project);
+function centerTabInRail(tab: HTMLButtonElement | null) {
+  const rail = tab?.parentElement;
+  if (!tab || !rail || rail.scrollWidth <= rail.clientWidth) return;
+
+  const targetLeft = tab.offsetLeft - (rail.clientWidth - tab.offsetWidth) / 2;
+  rail.scrollTo({
+    left: Math.max(0, targetLeft),
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+  });
+}
+
+export function ProjectShowcase() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const activeProject = projects[activeIndex];
+
+  function selectProject(index: number, moveFocus = false) {
+    setActiveIndex(index);
+    const selectedTab = tabRefs.current[index];
+    if (moveFocus) selectedTab?.focus();
+    centerTabInRail(selectedTab);
   }
 
-  useEffect(() => {
-    if (!activeProject) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActiveProject(null);
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-
-      const activeDialog =
-        activeDialogRef.current ?? document.querySelector<HTMLElement>(".popup-fundo.ativo .container-projeto");
-      const focusableElements = activeDialog?.querySelectorAll<HTMLElement>(
-        'button:not([disabled]), a[href], video[controls], [tabindex]:not([tabindex="-1"])',
-      );
-      if (!focusableElements?.length) return;
-
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (event.shiftKey && document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      } else if (!event.shiftKey && document.activeElement === lastElement) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    };
-
-    document.body.classList.add("modal-open");
-    const focusTimer = window.setTimeout(() => {
-      document.querySelector<HTMLButtonElement>(".popup-fundo.ativo .btn-fechar-popup")?.focus();
-    }, 100);
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.clearTimeout(focusTimer);
-      document.body.classList.remove("modal-open");
-      window.removeEventListener("keydown", handleKeyDown);
-      triggerRef.current?.focus();
-    };
-  }, [activeProject]);
+  function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const nextIndex = getNextIndex(event.key, index);
+    if (nextIndex === null) return;
+    event.preventDefault();
+    selectProject(nextIndex, true);
+  }
 
   return (
-    <>
-      <div className="project-container">
-        {projects.map((project) => (
-          <button
-            key={project.id}
-            type="button"
-            className="project-box"
-            data-category="HTML/CSS"
-            data-reveal
-            aria-haspopup="dialog"
-            onClick={(event) => openProject(project, event.currentTarget)}
-          >
-            <div className="project-box-img">
-              <Image
-                src={project.image}
-                alt={`Mockup do projeto ${project.title}`}
-                fill
-                sizes="(max-width: 1170px) 90vw, 420px"
-              />
-            </div>
-            <div className="project-box-text-container">
-              <div className="project-box-text">
-                <strong>{project.title}</strong>
-                <span>{project.technologiesLabel}</span>
-              </div>
-              <div className="project-box-btn" aria-hidden="true">
-                <i className="fa-solid fa-arrow-up-right-from-square" />
-              </div>
-            </div>
-          </button>
-        ))}
+    <div className="project-showcase" data-reveal>
+      <div className="project-showcase-topline">
+        <p>Selecione um projeto para explorar</p>
+        <span aria-hidden="true">
+          {String(activeIndex + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+        </span>
       </div>
 
-      {projects.map((project) => {
-        const isActive = activeProject?.id === project.id;
+      <article
+        key={activeProject.id}
+        id="project-showcase-panel"
+        className="project-showcase-stage"
+        role="tabpanel"
+        aria-labelledby={`project-tab-${activeProject.id}`}
+      >
+        <div className="project-showcase-image">
+          <Image
+            src={activeProject.image}
+            alt={`Apresentação visual do projeto ${activeProject.title}`}
+            fill
+            sizes="(max-width: 790px) 90vw, 650px"
+            quality={90}
+          />
+          <span aria-hidden="true">{String(activeIndex + 1).padStart(2, "0")}</span>
+        </div>
 
-        return (
-          <div
-            key={`${project.id}-dialog`}
-            className={`popup-fundo${isActive ? " ativo" : ""}`}
-            role="dialog"
-            aria-modal="true"
-            aria-hidden={!isActive}
-            aria-labelledby={`${project.id}-title`}
-            inert={!isActive}
-            onMouseDown={(event) => {
-              if (event.target === event.currentTarget) setActiveProject(null);
-            }}
-          >
-            <div className="container-projeto" ref={isActive ? activeDialogRef : undefined}>
-              <button
-                type="button"
-                className="btn-fechar-popup"
-                onClick={() => setActiveProject(null)}
-                aria-label={`Fechar detalhes do projeto ${project.title}`}
-              >
-                <i className="fa-solid fa-xmark" aria-hidden="true" />
-              </button>
-
-              <div className="projeto-video">
-                <div className="projeto-header">
-                  <h1 id={`${project.id}-title`}>
-                    {project.id === "alfatech" ? "AlfaTech Hospedagem" : project.title}
-                  </h1>
-                  <p>{project.summary}</p>
-                </div>
-                <video controls preload="metadata">
-                  <source src={project.video} type="video/mp4" />
-                  Seu navegador não suporta o elemento de vídeo.
-                </video>
-              </div>
-
-              <div className="projeto-info">
-                <div className="projeto-content">
-                  <h2>Detalhes do Projeto</h2>
-                  <p>{project.description}</p>
-                  <div className="project-technologies">
-                    {project.technologies.map((technology) => (
-                      <span key={technology}>{technology}</span>
-                    ))}
-                  </div>
-                  <p>{project.linksIntro}</p>
-                  <div className="profiles-social">
-                    {project.links.map((link) => (
-                      <div className="profile-social-container" key={link.href}>
-                        <a href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
-                          <i className={link.icon} aria-hidden="true" />
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="projeto-footer">
-                  <p>© 2026 Daniel. Todos os direitos reservados.</p>
-                </div>
-              </div>
-            </div>
+        <div className="project-showcase-content">
+          <div className="project-showcase-heading">
+            <span>
+              <i className="fa-solid fa-layer-group" aria-hidden="true" /> {activeProject.category}
+            </span>
+            <h3>{activeProject.title}</h3>
+            <p>{activeProject.description}</p>
           </div>
-        );
-      })}
-    </>
+
+          <ul className="project-showcase-technologies" aria-label={`Tecnologias do projeto ${activeProject.title}`}>
+            {activeProject.technologies.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+
+          <div className="project-showcase-footer">
+            <span className="project-showcase-status">
+              <i className="fa-solid fa-circle" aria-hidden="true" /> {activeProject.status}
+            </span>
+
+            {activeProject.href ? (
+              <a href={activeProject.href} target="_blank" rel="noreferrer">
+                {activeProject.linkLabel ?? "Acessar projeto"}
+                <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" />
+              </a>
+            ) : (
+              <span className="project-showcase-unavailable">
+                <i className="fa-regular fa-clock" aria-hidden="true" /> Link em breve
+              </span>
+            )}
+          </div>
+        </div>
+      </article>
+
+      <div className="project-showcase-tabs" role="tablist" aria-label="Projetos do portfólio">
+        {projects.map((project, index) => {
+          const isActive = index === activeIndex;
+
+          return (
+            <button
+              key={project.id}
+              ref={(element) => {
+                tabRefs.current[index] = element;
+              }}
+              id={`project-tab-${project.id}`}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              aria-controls="project-showcase-panel"
+              tabIndex={isActive ? 0 : -1}
+              className={`project-showcase-tab${isActive ? " active" : ""}`}
+              onClick={() => selectProject(index)}
+              onKeyDown={(event) => handleTabKeyDown(event, index)}
+            >
+              <span className="project-showcase-tab-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="project-showcase-tab-copy">
+                <strong>{project.title}</strong>
+                <small>{project.category}</small>
+              </span>
+              <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
 }
