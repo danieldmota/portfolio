@@ -4,18 +4,9 @@ import { ExpandableEntry } from "@/components/expandable-entry";
 import { Navigation } from "@/components/navigation";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { SkillsExplorer } from "@/components/skills-explorer";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TypingRole } from "@/components/typing-role";
-
-const skills = [
-  { icon: "fa-brands fa-js", label: "JavaScript/React/Next.js/Nest.js" },
-  { icon: "fa-brands fa-node-js", label: "Node" },
-  { icon: "fa-brands fa-php", label: "PHP" },
-  { icon: "fa-brands fa-python", label: "Python" },
-  { icon: "fa-solid fa-database", label: "MySQL/Postgre" },
-  { icon: "fa-solid fa-database", label: "Prisma ORM/Drizzle ORM" },
-  { icon: "fa-brands fa-flutter", label: "Flutter" },
-] as const;
 
 const socialLinks = [
   { href: "https://www.instagram.com/danield.mota", icon: "fa-brands fa-instagram", label: "Instagram" },
@@ -105,19 +96,8 @@ export default function Home() {
           <section id="skills" className="section-container">
             <div className="section-heading">
               <span>Habilidades técnicas</span>
-              <h3>Tecnologias</h3>
             </div>
-
-            <div className="skills-box-container">
-              {skills.map((skill) => (
-                <div className="skill-box bg-gradient" data-reveal key={skill.label}>
-                  <div className="skill-box-content">
-                    <i className={skill.icon} aria-hidden="true" />
-                    <span>{skill.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <SkillsExplorer />
           </section>
 
           <section id="projects" className="section-container">
