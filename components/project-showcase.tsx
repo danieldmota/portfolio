@@ -9,6 +9,7 @@ type Project = {
   title: string;
   category: string;
   image: string;
+  desktopImageFit?: "cover" | "contain";
   description: string;
   technologies: readonly string[];
   href?: string;
@@ -30,16 +31,17 @@ const projects: readonly Project[] = [
     status: "Publicado",
   },
   {
-    id: "alfatech",
-    title: "AlfaTech",
-    category: "Landing page",
-    image: "/images/mockup-notebook-alfatech.png",
+    id: "rafael-video-editor",
+    title: "Rafael — Video Editor",
+    category: "Portfólio profissional",
+    image: "/images/capa-rafael.png",
+    desktopImageFit: "contain",
     description:
-      "Landing page para uma empresa fictícia de hospedagem, desenvolvida durante meus estudos de front-end com foco em composição visual e layout profissional.",
-    technologies: ["HTML", "CSS"],
-    href: "https://github.com/danieldmota/site-hospedagem",
-    linkLabel: "Ver repositório",
-    status: "Código disponível",
+      "Portfólio criado para apresentar os serviços e a identidade visual de um editor de vídeo, com uma experiência direta, dinâmica e orientada ao impacto do conteúdo.",
+    technologies: ["React", "JavaScript"],
+    href: "https://portifolio-rafael-bice.vercel.app",
+    linkLabel: "Acessar projeto",
+    status: "Publicado",
   },
 ] as const;
 
@@ -97,7 +99,11 @@ export function ProjectShowcase() {
         role="tabpanel"
         aria-labelledby={`project-tab-${activeProject.id}`}
       >
-        <div className="project-showcase-image">
+        <div
+          className={`project-showcase-image${
+            activeProject.desktopImageFit === "contain" ? " project-showcase-image-contain" : ""
+          }`}
+        >
           <Image
             src={activeProject.image}
             alt={`Apresentação visual do projeto ${activeProject.title}`}

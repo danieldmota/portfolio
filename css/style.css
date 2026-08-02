@@ -739,6 +739,14 @@ header ul li a.active {
   animation: project-image-in 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.project-showcase-image-contain {
+  background-color: #080a0f;
+}
+
+.project-showcase-image-contain img {
+  object-fit: contain;
+}
+
 .project-showcase-image > span {
   position: absolute;
   z-index: 1;
@@ -1357,6 +1365,10 @@ header ul li a.active {
     min-height: 310px;
     border-right: 0;
     border-bottom: 1px solid var(--border-color);
+  }
+
+  .project-showcase-image-contain img {
+    object-fit: cover;
   }
 
   .project-showcase-content {

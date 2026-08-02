@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "Portfólio Daniel",
   description: "Portfólio de Daniel Mota, desenvolvedor de software.",
   icons: {
-    icon: "/images/fav-icon.png",
+    icon: {
+      url: "/images/fav-icon.svg",
+      type: "image/svg+xml",
+    },
   },
 };
 
